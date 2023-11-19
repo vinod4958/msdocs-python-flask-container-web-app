@@ -43,9 +43,9 @@ jobs:
 
     - uses: azure/docker-login@v1
       with:
-        login-server: cloudquicklabs.azurecr.io
+        login-server: cloudquickstartregistry.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t cloudquicklabs.azurecr.io/myapp:${{ github.sha }}
-        docker push cloudquicklabs.azurecr.io/myapp:${{ github.sha }}
+        docker build . -t cloudquickstartregistry.azurecr.io/myapp:${{ github.sha }}
+        docker push cloudquickstartregistry.azurecr.io/myapp:${{ github.sha }}
