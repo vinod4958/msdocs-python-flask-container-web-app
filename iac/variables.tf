@@ -4,7 +4,7 @@ variable "region" {
 }
 variable "project" {
   description = "The project name"
-  default     = "example"
+  default     = "cloudquickstart"
 }
 variable "environment" {
   description = "The project environment"
