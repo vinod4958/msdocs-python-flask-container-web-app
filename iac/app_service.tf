@@ -38,6 +38,6 @@ resource "azurerm_app_service" "backend" {
 resource "azurerm_role_assignment" "acr_pull" {
   principal_id                     = azurerm_app_service.backend.identity.principal_id
   role_definition_name             = "AcrPull"
-  scope                            = azurerm_container_registry.registry.id
+  scope                            = azurerm_container_registry.registry[0].id
   skip_service_principal_aad_check = true
 }
