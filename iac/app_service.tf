@@ -26,7 +26,7 @@ resource "azurerm_app_service" "backend" {
   site_config {
     always_on = "true"
     # define the images to used for you application
-    linux_fx_version = "DOCKER|${azurerm_container_registry.registry.login_server}/${local.environmentvars["backend_image"]}:${local.environmentvars["backend_image_tag"]}"
+    linux_fx_version = "DOCKER|${azurerm_container_registry.registry.login_server}/myapp:1.0.0"
   }
 
   identity {

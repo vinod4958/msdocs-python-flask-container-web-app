@@ -47,5 +47,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t cloudquickstartregistry.azurecr.io/myapp:${{ github.sha }}
-        docker push cloudquickstartregistry.azurecr.io/myapp:${{ github.sha }}
+        docker build . -t cloudquickstartregistry.azurecr.io/myapp:1.0.0
+        docker push cloudquickstartregistry.azurecr.io/myapp:1.0.0
