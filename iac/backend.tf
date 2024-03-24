@@ -11,14 +11,14 @@ terraform {
       version = "~>3.0"
     }
   }
-  backend "remote" {
-		hostname = "app.terraform.io"
-		organization = "VincTech"
+  // backend "remote" {
+	// 	hostname = "app.terraform.io"
+	// 	organization = "VincTech"
 
-		workspaces {
-			name = "msdocs-python-flask-container-web-app"
-		}
-	}
+	// 	workspaces {
+	// 		name = "msdocs-python-flask-container-web-app"
+	// 	}
+	// }
 }
 
 provider "azurerm" {
