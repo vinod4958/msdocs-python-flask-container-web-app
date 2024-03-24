@@ -11,14 +11,14 @@ terraform {
       version = "~>3.0"
     }
   }
-  backend "remote" {
-		hostname = "app.terraform.io"
-		organization = "CloudQuickLabs"
+  // backend "remote" {
+	// 	hostname = "app.terraform.io"
+	// 	organization = "CloudQuickLabs"
 
-		workspaces {
-			name = "Azure_Policy"
-		}
-	}
+	// 	workspaces {
+	// 		name = "Azure_Policy"
+	// 	}
+	// }
 }
 
 provider "azurerm" {
