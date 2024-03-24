@@ -19,6 +19,7 @@ jobs:
         resource_group_name: test
         container_name: terraform
         storage_account_name: teststortf14
+        tf_working_directory: ./iac
 
     - name: Terraform Validate
       id: validate
