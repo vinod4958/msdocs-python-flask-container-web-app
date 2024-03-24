@@ -12,15 +12,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v2.0.2
+    - name: Terraform init azurerm backend
+      uses: ahmedig/terraform-azurerm-backend@v4
       with:
-        terraform_version: latest
-        cli_config_credentials_token: ${{ secrets.TFC_TOKEN_ID }}
-
-    - name: Terraform Init
-      id: init
-      run: terraform -chdir="./iac" init
+        azure_credentials: {{ secrets.AZURE_CREDENTIALS }}
+        resource_group_name: test
+        container_name: terraform
+        storage_account_name: teststortf14
 
     - name: Terraform Validate
       id: validate
@@ -43,9 +41,9 @@ jobs:
 
     - uses: azure/docker-login@v1
       with:
-        login-server: cloudquickstartregistry.azurecr.io
+        login-server: devops14acr.azurecr.io.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t cloudquickstartregistry.azurecr.io/myapp:1.0.0
-        docker push cloudquickstartregistry.azurecr.io/myapp:1.0.0
+        docker build . -t devops14acr.azurecr.io.azurecr.io/myapp:1.0.0
+        docker push devops14acr.azurecr.io.azurecr.io/myapp:1.0.0
